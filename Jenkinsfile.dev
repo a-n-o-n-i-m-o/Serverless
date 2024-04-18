@@ -1,5 +1,5 @@
 def deployFunction(String functionName) {
-    dir("${RUTA_SOURCE}/$functionName/$RUTA_SOURCE_FILES") {
+ 
             withCredentials([file(credentialsId: 'devioz-corporativo-gcp-devops-analitica-dev', variable: 'SECRET')]) {
                 sh "ls -lsa"
                 sh "pwd"
@@ -19,7 +19,7 @@ def deployFunction(String functionName) {
                         --source=. \
                         --env-vars-file .env.yaml \
                         --allow-unauthenticated """
-            }
+            
         }
 }
 
